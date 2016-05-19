@@ -57,7 +57,7 @@ So I decided to do this.
     (cider-connect "localhost" 7888)))
 ```
 
-5. Then just call `cider-diet-jack-in` to start nREPL and make `cider` connect ot it.
+Then just call `cider-diet-jack-in` to start nREPL and make `cider` connect ot it.
 
 ## Results
 
