@@ -57,7 +57,8 @@ So I decided to do this.
 
 (defun cider-diet-jack-in ()
   (interactive)
-  (let* ((cider-diet-process (start-process "cider-diet-nrepl" "*cider-diet-nrepl*"  "java" "-jar" cider-diet-path "7888"))) 
+  (let* ((cider-diet-process (start-process "cider-diet-nrepl" "*cider-diet-nrepl*" 
+                                            "java" "-jar" cider-diet-path "7888"))) 
     (accept-process-output cider-diet-process)
     (cider-connect "localhost" 7888)))
 ```
@@ -69,6 +70,7 @@ Then just call `cider-diet-jack-in` to start nREPL and make `cider` connect ot i
 
 For me it takes **4 seconds** to have working `cider` connected to `nREPL`.  
 I'm not sure if all `middleware` works, but at least I have pretty-printed stacktraces and other stuff.  
+But it works for me.  
 
 ## TODO
 
