@@ -71,7 +71,7 @@ Then just call `cider-diet-jack-in` to start nREPL and make `cider` connect ot i
 
 For me it takes **4 seconds** to have working `cider` connected to `nREPL`.  
 I'm not sure if all `middleware` works, but at least I have pretty-printed stacktraces and other stuff.  
-But it works for me.  
+So it works for me.  
 
 ## TODO
 
