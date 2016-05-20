@@ -38,6 +38,10 @@ I couldn't find any particular reason why it was so slow.
 
 So I decided to do this.  
 
+| command | time | description |
+|-------------|---------|---------|
+| `cider-diet-jack-in` | 4s | Much better! |
+
 ## How
 
 1. Checkout this repo
@@ -46,18 +50,20 @@ So I decided to do this.
 
 3. Put that `jar` somewhere
 4. Use the following function:
+
 ``` elisp
-(setq cider-diet-path ...) ;; set path to cider-diet-0.1.0-SNAPSHOT-standalone.jar
+(setq cider-diet-path (expand-file-name (concat (getenv "HOME")
+                                                "/git/cider-diet/target/cider-diet-0.1.0-SNAPSHOT-standalone.jar")))
 
 (defun cider-diet-jack-in ()
   (interactive)
-  ;; start nREPL
-  (let ((diet-nrepl (start-process "cider-diet-nrepl" "*cider-diet-nrepl*"  "java" "-jar" cider-diet-path))) 
-    (accept-process-output diet-nrepl)
+  (let* ((cider-diet-process (start-process "cider-diet-nrepl" "*cider-diet-nrepl*"  "java" "-jar" cider-diet-path "7888"))) 
+    (accept-process-output cider-diet-process)
     (cider-connect "localhost" 7888)))
 ```
 
 Then just call `cider-diet-jack-in` to start nREPL and make `cider` connect ot it.
+
 
 ## Results
 
@@ -69,7 +75,9 @@ I'm not sure if all `middleware` works, but at least I have pretty-printed stack
 1. Clean up
 2. Integrate with `cider` properly
 3. Check and fix dependencies
-4. Check if everything really works
+4. Check if everything really works (middleware etc.)
+5. Make it a package
+6. Pass additional options and parameters
 
 ## License
 
