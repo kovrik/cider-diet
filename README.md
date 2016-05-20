@@ -52,6 +52,7 @@ So I decided to do this.
 4. Use the following function:
 
 ``` elisp
+;; this is just an example, replace path with the correct one!
 (setq cider-diet-path (expand-file-name (concat (getenv "HOME")
                                                 "/git/cider-diet/target/cider-diet-0.1.0-SNAPSHOT-standalone.jar")))
 
