@@ -4,8 +4,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :main cider-diet.core
-  :aot [cider-diet.core]
+  :main cider.diet
+  :aot [cider.diet]
 
   ;; TODO Check if we really need these plugins and deps
   :plugins [[thomasa/mranderson "0.4.7"]]

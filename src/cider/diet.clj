@@ -1,4 +1,4 @@
-(ns cider-diet.core
+(ns cider.diet
   (:require [clojure.tools.nrepl.server :as nrepl-server]
             [cider.nrepl :refer (cider-nrepl-handler)])
   (:gen-class))
