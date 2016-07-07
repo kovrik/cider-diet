@@ -1,12 +1,7 @@
 # cider-diet
 (because it is supposed to be lightweight)
 
-## Disclaimer
-
-Warning: bad code below!  
-This is just a proof-of-concept (I spent just 1 hour making this)!  
-Use at your own risk.  
-Also, I don't know about `nrepl`/`cider`/`clojure`/whatever internals much.  
+Clojars: https://clojars.org/cider-diet
 
 ## Why
 
@@ -31,10 +26,6 @@ For example, `lein repl` does a lot of stuff under the hood (not just `java -jar
 
 In 99% of cases when I want to write Clojure code (not often these days) all I need is a working Clojure REPL + frontend (emacs) for it.  
 What I don't want in 100% of cases is to wait 30s before it starts.  
-
-At first I wanted to profile `lein repl` to figure out why it was slow.  
-But profiling snapshot's size was 851MB and it was boring.  
-I couldn't find any particular reason why it was so slow.  
 
 So I decided to do this.  
 
@@ -66,21 +57,18 @@ So I decided to do this.
 
 Then just call `cider-diet-jack-in` to start nREPL and make `cider` connect ot it.
 
+There is also a Boot task created by @arichiardi:  
+https://gist.github.com/arichiardi/86ccc450e243e9964e723d73f2f1db2c
 
 ## Results
 
 For me it takes **4 seconds** to have working `cider` connected to `nREPL`.  
 I'm not sure if all `middleware` works, but at least I have pretty-printed stacktraces and other stuff.  
-So it works for me.  
 
 ## TODO
 
-1. Clean up
-2. Integrate with `cider` properly
-3. Check and fix dependencies
-4. Check if everything really works (middleware etc.)
-5. Make it a package
-6. Pass additional options and parameters
+1. Check dependencies
+2. Pass additional options and parameters
 
 ## License
 
