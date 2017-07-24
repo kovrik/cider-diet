@@ -36,8 +36,8 @@ So I decided to do this.
 ## How
 
 1. Checkout this repo
-2. `lein uberjar` (creates `cider-diet-0.1.0-SNAPSHOT-standalone.jar`).  
-   > `java -jar cider-diet-0.1.0-SNAPSHOT-standalone.jar [<port_number>]` starts nREPL on port `<port_number>` (7888 by default).
+2. `lein uberjar` (creates `cider-diet-1.0.1-standalone.jar`).  
+   > `java -jar cider-diet-1.0.1-standalone.jar [<port_number>]` starts nREPL on port `<port_number>` (7888 by default).
 
 3. Put that `jar` somewhere
 4. Use the following function:
@@ -45,7 +45,7 @@ So I decided to do this.
 ``` elisp
 ;; this is just an example, replace path with the correct one!
 (setq cider-diet-path (expand-file-name (concat (getenv "HOME")
-                                                "/git/cider-diet/target/cider-diet-0.1.0-SNAPSHOT-standalone.jar")))
+                                                "/git/cider-diet/target/cider-diet-1.0.1-standalone.jar")))
 
 (defun cider-diet-jack-in ()
   (interactive)
@@ -55,7 +55,9 @@ So I decided to do this.
     (cider-connect "localhost" 7888)))
 ```
 
-Then just call `cider-diet-jack-in` to start nREPL and make `cider` connect ot it.
+Then just call `cider-diet-jack-in` to start nREPL AND make `cider` connect to it.
+OR
+Use `cider-connect` command if you already have `cider-diet` standalone process running (for example, if you started it manually via `java -jar cider-diet-1.0.1-standalone.jar` command).
 
 There is also a Boot task created by @arichiardi:  
 https://gist.github.com/arichiardi/86ccc450e243e9964e723d73f2f1db2c
